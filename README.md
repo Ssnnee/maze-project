@@ -7,7 +7,7 @@ This project aims to create a 3D Maze game using C, SDL2, and Raycasting.
 
 |Directory or file name | Description |
 |------------------------|-------------|
-| ./dependencies/        | store all header files |
+| [dependencies] (dependencies)        | store all header files |
 | ./src/                 | store all source code |
 | ./README.md            | the main README of the project
 
