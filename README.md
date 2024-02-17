@@ -1,5 +1,7 @@
 # 3D Maze Game project
 
+![Alt text](./screen.png)
+
 ## Description
 This project aims to create a 3D Maze game using C, SDL2, and Raycasting.
 
@@ -33,6 +35,9 @@ gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags`
 | J | Go backward |
 | H | Rotate the camera to the left |
 | L | Rotate the camera to the right |
+
+## Demo
+Here a YouTube demo of the [game](https://youtu.be/tLM9Ln5v-bE)
 
 ## Style Guide
 Follow the Betty styling guidelines for maintaining a consistent coding style.
