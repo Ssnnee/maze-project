@@ -14,7 +14,7 @@ This project aims to create a 3D Maze game using C, SDL2, and Raycasting.
 ## Building and Compilation
 To compile the project, use the following GCC flags:
 ```
-gcc -Wall -Werror -Wextra -pedantic -o maze src/*.c -Idependencies -lSDL2 -lSDL2_image
+gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags` `sdl2-config --libs` -lSDL2_image
 ```
 
 ## Usage
@@ -22,6 +22,15 @@ gcc -Wall -Werror -Wextra -pedantic -o maze src/*.c -Idependencies -lSDL2 -lSDL2
 ```
 ./maze
 ```
+
+## Game key
+
+|Key | Action |
+|-----------------------|-------------|
+| K | Go forward |
+| J | Go backward |
+| H | Rotate the camera to the left |
+| L | Rotate the camera to the right |
 
 ## Style Guide
 Follow the Betty styling guidelines for maintaining a consistent coding style.
