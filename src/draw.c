@@ -13,10 +13,10 @@ int map[]=           //the map array. Edit to change level but keep the outer wa
     1,1,1,1,1,1,1,1,
     1,0,0,0,0,0,0,1,
     1,0,1,1,1,1,0,1,
-    1,0,1,0,0,0,0,1,
-    1,0,1,0,1,1,0,1,
-    1,0,0,0,0,1,0,1,
     1,0,0,0,0,0,0,1,
+    1,0,1,0,1,1,0,1,
+    1,0,1,1,0,1,0,1,
+    1,0,0,1,0,0,0,1,
     1,1,1,1,1,1,1,1,
 };
 
@@ -94,9 +94,8 @@ bool loadMedia(SDL_Renderer* renderer) {
     bool success = true;
 
     wallTexture = loadTexture("./textures/redbrick.bmp", renderer);
-    skyTexture = loadTexture("./textures/sky.bmp", renderer);
 
-    if (wallTexture == NULL || skyTexture == NULL) {
+    if (wallTexture == NULL)  {
         success = false;
     }
 
