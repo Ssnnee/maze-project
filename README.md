@@ -5,6 +5,15 @@
 ## Description
 This project aims to create a 3D Maze game using C, SDL2, and Raycasting.
 
+## Table of Content
+* [Directory Structure](#directory-structure)
+* [Requirements](#requirements)
+* [Usage](#usage)
+* [Demo](#demo)
+* [Features](#features)
+* [License](#license)
+
+
 ## Directory Structure
 
 |Directory or file name | Description |
@@ -39,9 +48,13 @@ gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags`
 ## Demo
 Here a YouTube demo of the [game](https://youtu.be/tLM9Ln5v-bE)
 
-## Style Guide
-Follow the Betty styling guidelines for maintaining a consistent coding style.
+## Features
++ Moving Player
++ Moving camera
++ Handle collision
++ Map
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
+
 
