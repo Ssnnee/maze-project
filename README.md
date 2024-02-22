@@ -35,6 +35,10 @@ gcc -Wall -Werror -Wextra -pedantic ./src/*.c -lm -o maze `sdl2-config --cflags`
 ```
 ./maze
 ```
+You can have to make it executable
+```
+chmod +x ./maze
+```
 
 ## Game key
 
