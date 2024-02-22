@@ -9,6 +9,11 @@ float px,py,pdx,pdy,pa;
 
 
 
+/**
+ * main - Entry point
+ *
+ * Return: 0 on success, anything else on failure
+ */
 int main()
 {
     SDL_Init(SDL_INIT_VIDEO);

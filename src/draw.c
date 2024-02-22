@@ -8,7 +8,7 @@ SDL_Texture* wallTexture = NULL;
 SDL_Texture* skyTexture = NULL;
 
 //------------------------------MAP----------------------------------------------
-int map[]=           //the map array. Edit to change level but keep the outer walls
+int map[]=           //the map array. Editable to change level but keep the outer walls
 {
     1,1,1,1,1,1,1,1,
     1,0,0,0,0,0,0,1,
@@ -20,12 +20,16 @@ int map[]=           //the map array. Edit to change level but keep the outer wa
     1,1,1,1,1,1,1,1,
 };
 
+/**
+ * drawMap2D - Draw the 2D map
+ * @renderer: The renderer to draw the map
+ */
 void drawMap2D(SDL_Renderer* renderer)
 {
     int x,y,xo,yo;
     for(y=0;y<mapY;y++)
     {
-        for(x=0;x<mapX;x++)
+        for(x = 0; x < mapX ; x++)
         {
             if(map[y*mapX+x]==1)
              SDL_SetRenderDrawColor(renderer, 111, 255, 255, 155);
@@ -41,10 +45,22 @@ void drawMap2D(SDL_Renderer* renderer)
 }
 
 //------------------------PLAYER------------------------------------------------
-float degToRad(int a) { return a*M_PI/180.0;}
+/**
+ * degToRad - Convert degrees to radians
+ * @a: The angle in degrees
+ * Return: The angle in radians
+ */
+float degToRad(int a)
+{
+    return (a*M_PI/180.0);
+}
 int FixAng(int a){ if(a>359){ a-=360;} if(a<0){ a+=360;} return a;}
 
 
+/**
+ * drawPlayer2D - Draw the 2D player
+ * @renderer: The renderer to draw the player
+ */
 void drawPlayer2D(SDL_Renderer* renderer)
 {
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
@@ -52,6 +68,10 @@ void drawPlayer2D(SDL_Renderer* renderer)
     SDL_RenderDrawLine(renderer, px, py, px+pdx*20, py+pdy*20);
 }
 
+/**
+ * Buttons - Handle the player's movement
+ * @event: The event to handle
+ */
 void Buttons(SDL_Event event)
 {
     switch (event.key.keysym.sym)
@@ -87,9 +107,25 @@ void Buttons(SDL_Event event)
 
 
 //---------------------------Draw Rays and Walls--------------------------------
+/**
+ * distance - Calculate the distance between two points
+ * @ax: The x coordinate of the first point
+ * @ay: The y coordinate of the first point
+ * @bx: The x coordinate of the second point
+ * @by: The y coordinate of the second point
+ * @ang: The angle between the two points
+ *
+ * Return: The distance between the two points
+ */
 float distance(int ax, int ay, int bx,int by,int  ang)
 { return cos(degToRad(ang))*(bx-ax)-sin(degToRad(ang))*(by-ay);}
 
+/**
+ * loadMedia - Load the media
+ * @renderer: The renderer to load the media onto
+ *
+ * Return: True on success, false on failure
+ */
 bool loadMedia(SDL_Renderer* renderer) {
     bool success = true;
 
@@ -102,7 +138,10 @@ bool loadMedia(SDL_Renderer* renderer) {
     return success;
 }
 
-
+/**
+ * drawRays2D - Draw the 2D rays
+ * @renderer: The renderer to draw the rays
+ */
 void drawRays2D(SDL_Renderer* renderer)
 {
     int r,mx,my,mp,dof; float vx,vy,rx,ry,ra,xo,yo,disV,disH;
